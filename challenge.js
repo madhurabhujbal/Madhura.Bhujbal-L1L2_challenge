@@ -2,6 +2,9 @@
 function solution (input) {
     // logic here
     let numArray = parseInput(input);
+    if(numArray.length == 0) {
+        return `No valid number found in the given input => '${input}'`;
+    }
     let list = permutations(numArray);
 
      return list;
@@ -34,7 +37,9 @@ function arrayToNumber(list) {
 }
 
 function permutations(input) {
-    //edge cases for empty and single input
+    if(input.length == 1)
+        return input;
+
     let lastNum = input[input.length - 1]
     let list = [ [lastNum] ];
     for(let i = 0; i < input.length - 1; i++) {
@@ -60,5 +65,6 @@ function permutations(input) {
 }
 
   // some example inputs
-//    console.log(solution('326')); // expected ouput 632,623,362,326,263,236
-  console.log(solution('A 3B2 C6D')); // expected ouput 632,623,362,326,263,236
+   console.log(solution('326')); // expected ouput 632,623,362,326,263,236
+//   console.log(solution('A 3B2 C6D')); // expected ouput 632,623,362,326,263,236
+//   console.log(solution('A B CD')); // expected ouput 632,623,362,326,263,236
