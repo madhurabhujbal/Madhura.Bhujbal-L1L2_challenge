@@ -1,13 +1,13 @@
 
 function solution (input) {
     // logic here
-    let numArray = parseInput(input);
+    let numArray = parseInput(input);   // convert string to array '326' => [3, 2, 6]
     if(numArray.length == 0) {
         return `No valid number found in the given input => '${input}'`;
     }
-    let list = permutations(numArray);
+    let permutations = calcPermutations(numArray);
 
-     return list;
+     return permutations;
   }
 
   function parseInput (input) {
@@ -22,33 +22,32 @@ function solution (input) {
     return numArr;
   };
 
-  function fitNewNumber(currArr, pos, num) {
+  function insertDigitAt(currArr, pos, num) {
     let newArr = [...currArr];
     newArr.splice(pos, 0, num);
     return newArr;
 }
 
-function arrayToNumber(list) {
+function arrayToNumber(digits) {
     let num = 0;
-    for(let i of list) {
+    for(let i of digits) {
         num = (num * 10) + i;
     }
     return num;
 }
 
-function permutations(input) {
+function calcPermutations(input) {
     if(input.length == 1)
         return input;
 
-    let lastNum = input[input.length - 1]
-    let list = [ [lastNum] ];
-    for(let i = 0; i < input.length - 1; i++) {
+    let list = [ [input[0]] ];
+    for(let i = 1; i < input.length; i++) {
         let currNum = input[i];
         let newList = [];
 
         for(let listItem of list) {
-            for(let j = 0; j <= listItem.length; j++) {
-                newElement = fitNewNumber(listItem, j, currNum);
+            for(let j = 0; j < listItem.length + 1; j++) {
+                newElement = insertDigitAt(listItem, j, currNum);
                 newList.push(newElement);
             }
         }
