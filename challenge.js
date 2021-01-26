@@ -6,8 +6,7 @@ function solution (input) {
         return `No valid number found in the given input => '${input}'`;
     }
     let permutations = calcPermutations(numArray);
-
-     return permutations;
+    return permutations.join(',');
   }
 
   function parseInput (input) {
@@ -59,8 +58,7 @@ function calcPermutations(input) {
         result.push(arrayToNumber(item));
     }
 
-    let sortedArray =  result.sort((a, b) => b - a);    //sort in elements descending order
-    return sortedArray.join(',');                       // return comma separated list of elements
+    return result.sort((a, b) => b - a);    //sort in elements descending order
 }
 
   // some example inputs
