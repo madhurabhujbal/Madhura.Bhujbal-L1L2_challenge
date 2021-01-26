@@ -1,0 +1,23 @@
+{
+  "name": "madhura.bhujbal-l1l2-challenge",
+  "version": "1.0.0",
+  "description": "Coding challenge",
+  "main": "challenge.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madhurabhujbal/Madhura.Bhujbal-L1L2_challenge.git"
+  },
+  "author": "Madhura Bhujbal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madhurabhujbal/Madhura.Bhujbal-L1L2_challenge/issues"
+  },
+  "homepage": "https://github.com/madhurabhujbal/Madhura.Bhujbal-L1L2_challenge#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1"
+  }
+}
