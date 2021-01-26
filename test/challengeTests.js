@@ -1,8 +1,10 @@
 let assert = require('assert');
-let permute = require('../permute');
+let challenge = require('../challenge.js');
 
-describe('When Passed phanumeric string', function () {
- it('should ignore the non-numeric characters and process the reamining digits', function () {
-        assert.equal(permute.solution('326'), '632,623,362,326,263,236');
+describe('solution function', function () {
+    describe('When Passed numeric string', function () {
+    it('should process the digits in number', function () {
+            assert.strictEqual(challenge.solution('326'), '632,623,362,326,263,236');
+        });
     });
 });
