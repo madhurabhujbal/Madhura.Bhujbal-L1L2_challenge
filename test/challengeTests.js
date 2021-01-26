@@ -26,4 +26,9 @@ describe('solution function', function () {
         });
     });
 
+    describe('When Passed an empty string', function () {
+        it('should give an error message', function () {
+            assert.strictEqual(challenge.solution(''), "No valid number found in the given input => ''");
+        });
+    });
 });
